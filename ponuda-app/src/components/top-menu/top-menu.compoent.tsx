@@ -21,7 +21,7 @@ class TopMenu extends React.Component<ITopMenuProps, {}>{
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <Link to="/" className="nav-link">Pocetna</Link>
-                    {currentUser && <Link to="/products" className="nav-link">Proizvodi</Link>}
+                    {currentUser && currentUser.isAdmin && <Link to="/products" className="nav-link">Proizvodi</Link>}
                 </Nav>
                 <Nav className="ml-auto">
                     {!currentUser && <Nav.Link href="" onClick={signInWithGoogle}>Prijavi se</Nav.Link>}
